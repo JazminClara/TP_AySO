@@ -1,0 +1,90 @@
+ls
+ssh-keygen
+cat $HOME/.ssh/*.pub
+cd
+ls
+mkdir repogit
+cd repogit/
+git clone git@github.com:JazminClara/TP_AySO.git
+cd TP_AySO/
+pwd
+ls -l
+cat /etc/passwd
+man grep
+grep UBUNTU /etc/passwd
+grep ubuntu /etc/passwd
+grep -i Ubuntu /etc/passwd
+grep -i Ubuntu /etc/passwd | awk -F ':' '{print $2}'
+grep -i Ubuntu /etc/passwd | awk -F ':' '{print $2}' > datos_usuario.txt
+ls
+whoami
+echo "Usuario=$(whoami)">>datos_usuario.txt
+cat datos_usuario.txt 
+git add .
+git config --global user.email jazminclara@gmail.com
+git config --global user.name JazminClara
+git config -m "ADD: agregado 1er ejercicio sobre datos_usuarios.txt"
+git status
+git commit -m "ADD: agregado 1er ejercicio sobre datos_usuarios.txt"
+git status
+cd /home/vagrant
+cat /proc/cpuinfo | grep -i "model name" | head -n1 >> info_pc.txt
+ls -la
+cat info_pc.txt 
+git commit -m "feat: Añadiendo información de CPU"
+git status
+mv info_pc.txt repogit/
+cd repogit/
+ls -la
+mv info_pc.txt TP_AySO/
+cd TP_AySO/
+ls -la
+git commit -m "feat: Añadiendo información de CPU"
+git add .
+git commit -m "feat: Añadiendo información de CPU"
+git status
+cat /etc/passwd
+man grep
+man sort
+cat /etc/passwd | grep -v "nologin" | head -n10 | sort -k
+cat /etc/passwd | grep -v "nologin" | head -n10 | sort -t: -k7,7
+cat /etc/passwd | grep -v "nologin" | head -n10 | sort -t: -k7,7 >> lista_ordenada.txt
+ls -la
+cat lista_ordenada.txt 
+git add .
+git commit -m "ADD: Listado de usurios ordenada"
+cat <<FIN>> README.md 
+Alumno: Jazmín Clara
+División: 115
+Turno: Mañana
+FIN
+
+cat README.md 
+git add .
+git commit -m "docs: agregando información de alumno al README"
+git status
+pwd
+cd /home/vagrant/
+ls
+mkdir -p TP1/{arquitectura,so}/Clase{1..6}
+ls
+ls TP1/arquitectura/
+ls TP1/so/
+cd /home/vagrant/repogit/
+cat <<FIN>> script_dir.sh
+mkdir -p TP1/{arquitectura,so}/Clase{1..6}
+FIN
+
+cat script_dir.sh 
+ls
+ls -la
+chmod 764 script_dir.sh
+ls -la
+git add .
+mv script_dir.sh TP_AySO/
+cd TP_AySO/
+git add .
+git commit -m "ADD: Añadiendo script"
+cat ../../.bash_history 
+history -a
+cat ../../.bash_history 
